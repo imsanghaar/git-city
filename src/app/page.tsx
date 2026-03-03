@@ -385,15 +385,18 @@ function HomeContent() {
   const [introMode, setIntroMode] = useState(false);
   const [introPhase, setIntroPhase] = useState(-1); // -1 = not started, 0-3 = text phases, 4 = done
   const [exploreMode, setExploreMode] = useState(false);
-  const [themeIndex, setThemeIndex] = useState(() => {
-    if (typeof window === "undefined") return 0;
+  const [themeIndex, setThemeIndex] = useState(0);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
     const saved = localStorage.getItem("gitcity_theme");
     if (saved !== null) {
       const n = parseInt(saved, 10);
-      if (n >= 0 && n <= 3) return n;
+      if (n >= 0 && n <= 3) setThemeIndex(n);
     }
-    return 0;
-  });
+  }, []);
+
+
   const [hud, setHud] = useState({ speed: 0, altitude: 0 });
   const [playerPos, setPlayerPos] = useState<{ x: number; z: number }>({ x: 0, z: 0 });
   const [districtAnnouncement, setDistrictAnnouncement] = useState<{ name: string; color: string; population: number } | null>(null);
