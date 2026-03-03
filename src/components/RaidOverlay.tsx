@@ -193,7 +193,7 @@ export default function RaidOverlay({ phase, raidData, onSkip, onExit }: Props) 
               </h1>
               <p className="mt-2 text-center font-silkscreen text-xs tracking-wide text-cream/60 md:text-sm">
                 {isWin
-                  ? `${attackerLogin} raided ${defenderLogin}`
+                  ? `${attackerLogin} defeated ${defenderLogin}`
                   : `${defenderLogin} held the line`}
               </p>
             </div>
@@ -247,7 +247,7 @@ export default function RaidOverlay({ phase, raidData, onSkip, onExit }: Props) 
               {/* XP earned */}
               {raidData.xp_earned > 0 && (
                 <p className="text-center text-sm text-orange-300">
-                  +{raidData.xp_earned} Raid XP
+                  +{raidData.xp_earned} Battle XP
                   {raidData.new_title && ` · Title: ${raidData.new_title}`}
                 </p>
               )}
@@ -262,8 +262,8 @@ export default function RaidOverlay({ phase, raidData, onSkip, onExit }: Props) 
               <button
                 onClick={() => {
                   const text = raidData.success
-                    ? `I just raided ${defenderLogin}'s building on Git City! ${raidData.attack_score} vs ${raidData.defense_score}`
-                    : `${defenderLogin} defended against my raid on Git City! ${raidData.attack_score} vs ${raidData.defense_score}`;
+                    ? `I just battled ${defenderLogin}'s building on Git City! ${raidData.attack_score} vs ${raidData.defense_score}`
+                    : `${defenderLogin} defended my attack on Git City! ${raidData.attack_score} vs ${raidData.defense_score}`;
                   const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent("https://thegitcity.com")}`;
                   window.open(url, "_blank");
                 }}

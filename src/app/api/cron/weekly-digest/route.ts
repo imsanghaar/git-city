@@ -99,7 +99,7 @@ export async function GET(request: NextRequest) {
         ];
 
         if (weeklyRaids) {
-          stats.push({ label: "Raids defended", value: `${weeklyRaids.defended}/${weeklyRaids.total}` });
+          stats.push({ label: "Battles defended", value: `${weeklyRaids.defended}/${weeklyRaids.total}` });
         }
         if (weeklyAchievements > 0) {
           stats.push({ label: "Achievements", value: weeklyAchievements });

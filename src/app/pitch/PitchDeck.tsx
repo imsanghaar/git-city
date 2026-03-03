@@ -333,7 +333,7 @@ function SlideProduct() {
             "20+ achievements (Bronze to Diamond)",
             "Daily streak system",
             "Unlock free items",
-            "Raid system (PvP)",
+            "Battle system (PvP)",
           ]}
         />
         <FeatureCard
@@ -455,7 +455,7 @@ function SlideCompetition() {
           </thead>
           <tbody className="text-muted">
             <CompRow feature="3D visualization" gc="Full city" sky="Bar chart" cr="None" />
-            <CompRow feature="Community" gc="Kudos, raids, gifts" sky="None" cr="Basic" />
+            <CompRow feature="Community" gc="Kudos, battles, gifts" sky="None" cr="Basic" />
             <CompRow feature="Gamification" gc="Achievements, streaks, boards" sky="None" cr="Score" />
             <CompRow feature="Monetization" gc="Ads + Shop" sky="None (dead)" cr="Premium" />
             <CompRow feature="Status" gc="Active, growing" sky="Discontinued" cr="Low traction" />
@@ -589,7 +589,7 @@ function SlideRoadmap() {
     <div className="flex w-full max-w-4xl flex-col gap-6">
       <SlideHeader n="12" title="Roadmap" />
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        <RoadmapItem quarter="Q1 2026" status="done" title="Core City" desc="3D city, leaderboards, achievements, streaks, shop, ads, districts, raids" />
+        <RoadmapItem quarter="Q1 2026" status="done" title="Core City" desc="3D city, leaderboards, achievements, streaks, shop, ads, districts, battles" />
         <RoadmapItem quarter="Q2 2026" status="next" title="Street Mode" desc="Third-person walking. Visit buildings, discover secrets, vehicles." />
         <RoadmapItem quarter="Q3 2026" status="planned" title="Pixels Economy" desc="Virtual currency, premium marketplace, season passes." />
         <RoadmapItem quarter="Q4 2026" status="planned" title="Git City Wrapped" desc="Year-in-review animations. Viral shareable cards." />

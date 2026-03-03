@@ -13,11 +13,11 @@ export function sendRaidAlertNotification(
   defenseScore: number,
 ) {
   const outcome = success
-    ? `@${attackerLogin} raided your building!`
+    ? `@${attackerLogin} attacked your building!`
     : `You defended against @${attackerLogin}!`;
 
   const outcomeHtml = success
-    ? `<p style="color: #ff6b6b; font-size: 16px;">Your building was raided!</p>
+    ? `<p style="color: #ff6b6b; font-size: 16px;">Your building was attacked!</p>
        <p style="color: #e0d8cc;"><strong>@${attackerLogin}</strong> broke through your defenses.</p>`
     : `<p style="color: #c8e64a; font-size: 16px;">Defense successful!</p>
        <p style="color: #e0d8cc;">You held off <strong>@${attackerLogin}</strong>'s attack.</p>`;
@@ -47,7 +47,7 @@ export function sendRaidAlertNotification(
     actionUrl: `${BASE_URL}/?user=${defenderLogin}`,
     priority: "normal",
     channels: ["email"],
-    // Batch eligible: if user gets raided 5 times in an hour, send 1 digest
+    // Batch eligible: if user gets attacked 5 times in an hour, send 1 digest
     batchKey: `raids:${defenderId}`,
     batchWindowMinutes: 60,
     batchEventData: {

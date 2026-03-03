@@ -87,10 +87,10 @@ export default function RaidPreviewModal({ preview, loading, error, onRaid, onCa
         {/* Header */}
         <div className="mb-3 text-center">
           <h2 className="font-silkscreen text-sm uppercase tracking-wider text-red-400">
-            Raid Preview
+            Battle Preview
           </h2>
           <p className="mt-1 text-[10px] text-muted">
-            {preview.raids_today}/{preview.raids_max} raids used today
+            {preview.raids_today}/{preview.raids_max} battles used today
           </p>
         </div>
 
@@ -166,12 +166,15 @@ export default function RaidPreviewModal({ preview, loading, error, onRaid, onCa
                 {preview.defender_login}
               </p>
             </div>
-            <StrengthBar
-              estimate={preview.defense_estimate}
-              label="Defense"
-              score={preview.defense_score}
-              breakdown={preview.defense_breakdown}
-            />
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-[9px] uppercase tracking-wider text-muted">Defense</span>
+              <div className="flex gap-1">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="h-4 w-3" style={{ backgroundColor: "#333", opacity: 0.3 }} />
+                ))}
+              </div>
+              <span className="text-sm font-bold text-muted/50">???</span>
+            </div>
           </div>
         </div>
 
@@ -232,7 +235,7 @@ export default function RaidPreviewModal({ preview, loading, error, onRaid, onCa
               animation: loading ? "none" : "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
             }}
           >
-            {loading ? "RAIDING..." : "RAID"}
+            {loading ? "BATTLING..." : "BATTLE"}
           </button>
         </div>
       </div>

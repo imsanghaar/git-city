@@ -1005,7 +1005,7 @@ export default function ShopClient({
         const toastMsg = isConsumable
           ? "Added to your inventory!"
           : isRaidItem
-            ? "Unlocked! Ready for your next raid."
+            ? "Unlocked! Ready for your next battle."
             : "Purchased! Equip it below.";
         const toastBg = isRaidItem ? "#ff5555" : ACCENT;
         const toastBorder = isRaidItem ? "#aa2222" : SHADOW;
@@ -1082,7 +1082,7 @@ export default function ShopClient({
           }`}
           style={{ color: activeTab === "raid" ? "#ff5555" : undefined }}
         >
-          RAID
+          BATTLE
         </button>
       </div>
 
@@ -1595,7 +1595,7 @@ export default function ShopClient({
           <div className="border-[3px] border-border bg-bg-raised p-4">
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-sm" style={{ color: "#ff5555" }}>
-                Raid
+                Battle
               </h3>
               <span className="text-[9px] text-muted normal-case">
                 vehicles, tags & boosts

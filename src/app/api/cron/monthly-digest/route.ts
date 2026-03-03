@@ -96,8 +96,8 @@ export async function GET(request: NextRequest) {
         if (dev.rank) stats.push({ label: "City rank", value: `#${dev.rank}` });
         if (achievements > 0) stats.push({ label: "Achievements unlocked", value: achievements });
         if (raids) {
-          stats.push({ label: "Raids launched", value: raids.attacks });
-          stats.push({ label: "Raids defended", value: raids.defenses });
+          stats.push({ label: "Battles launched", value: raids.attacks });
+          stats.push({ label: "Battles defended", value: raids.defenses });
         }
 
         sendNotificationAsync({

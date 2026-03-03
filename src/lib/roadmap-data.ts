@@ -55,8 +55,8 @@ export const ROADMAP_PHASES: RoadmapPhase[] = [
       },
       {
         id: "raid-system",
-        name: "Raid System",
-        description: "Visit and raid other developers' buildings",
+        name: "Battle System",
+        description: "Visit and battle other developers' buildings",
         status: "done",
       },
       {
@@ -198,8 +198,8 @@ export const ROADMAP_PHASES: RoadmapPhase[] = [
       },
       {
         id: "driveby-firewall",
-        name: "Drive-by Raids & Firewall",
-        description: "Drive to a building to raid it. Auto-shield after 3 raids/day",
+        name: "Drive-by Battles & Firewall",
+        description: "Drive to a building to battle it. Auto-shield after 3 battles/day",
         status: "planned",
       },
       {

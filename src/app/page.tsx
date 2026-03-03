@@ -2360,7 +2360,7 @@ function HomeContent() {
         <div className="fixed top-20 left-1/2 z-50 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-xs animate-[slide-up_0.2s_ease-out]">
           <div className="border-[3px] border-border bg-bg-raised/95 px-4 py-3 backdrop-blur-sm">
             <p className="text-[10px] text-cream normal-case mb-2.5 leading-relaxed">
-              Sign in to give Kudos, raid buildings, and claim yours
+              Sign in to give Kudos, battle buildings, and claim yours
             </p>
             <button
               onClick={() => {
@@ -2525,7 +2525,7 @@ function HomeContent() {
                   <p className="truncate text-[10px] text-muted">@{selectedBuilding.login}</p>
                   {selectedBuilding.active_raid_tag && (
                     <p className="text-[8px] text-red-400">
-                      Raided by @{selectedBuilding.active_raid_tag.attacker_login}
+                      Attacked by @{selectedBuilding.active_raid_tag.attacker_login}
                     </p>
                   )}
                 </div>
@@ -2714,7 +2714,7 @@ function HomeContent() {
                     disabled={raidState.loading}
                     className="btn-press mt-1.5 w-full border-[3px] border-red-500/60 px-4 py-2 text-xs text-red-400 transition-colors hover:bg-red-500/10"
                   >
-                    {raidState.loading ? "Loading..." : "RAID"}
+                    {raidState.loading ? "Loading..." : "\u2694\ufe0f BATTLE \u2014 Win +50 XP"}
                   </button>
                 </div>
               )}
@@ -2738,7 +2738,7 @@ function HomeContent() {
                     onClick={() => { trackDisabledButtonClicked("raid"); handleSignIn(); }}
                     className="btn-press w-full py-2 text-[10px] border-[2px] border-dashed border-red-500/30 text-red-400/40 transition-colors hover:border-red-500/60 hover:text-red-400/70"
                   >
-                    &#x1F512; RAID
+                    &#x1F512; &#x2694;&#xFE0F; BATTLE
                   </button>
                 </div>
               )}
