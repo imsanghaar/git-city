@@ -1624,8 +1624,8 @@ function HomeContent() {
       };
       rawDevsRef.current = existedBefore
         ? rawDevsRef.current.map((d) =>
-            d.github_login?.toLowerCase() === refreshedLogin ? syncedDev : d
-          )
+          d.github_login?.toLowerCase() === refreshedLogin ? syncedDev : d
+        )
         : [...rawDevsRef.current, syncedDev];
 
       const layout = generateCityLayout(rawDevsRef.current);

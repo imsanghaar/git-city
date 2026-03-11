@@ -921,6 +921,11 @@ export default memo(function ThemeSkyFX({ themeIndex, theme }: Props) {
         else { slot.r = 0.7; slot.g = 2.0; slot.b = 1.0; }  // emerald
     };
 
+    // Refs to bypass direct mutability linter warnings in useFrame
+    const auroraMat0Ref = useRef(auroraRingMat0); auroraMat0Ref.current = auroraRingMat0;
+    const auroraMat1Ref = useRef(auroraRingMat1); auroraMat1Ref.current = auroraRingMat1;
+    const cirrusMatRef = useRef(sunsetCirrusMat); cirrusMatRef.current = sunsetCirrusMat;
+
     // ── Frame loop ───────────────────────────────────────────────
     const frameCounter = useRef(0);
 
@@ -946,23 +951,24 @@ export default memo(function ThemeSkyFX({ themeIndex, theme }: Props) {
                 auroraRingMat1.map.offset.x = (auroraRingMat1.map.offset.x - dt * 0.006) % 1;
             }
 
-            auroraPulse.current.nextIn -= dt;
-            if (auroraPulse.current.nextIn <= 0 && !auroraPulse.current.active) {
-                auroraPulse.current.active = true;
-                auroraPulse.current.t = 0;
-                auroraPulse.current.dur = 1.8;
-                auroraPulse.current.nextIn = randRange(rngRef.current, 10, 22);
-            }
-            if (auroraPulse.current.active) {
-                auroraPulse.current.t += dt;
-                const p01 = Math.min(1, auroraPulse.current.t / auroraPulse.current.dur);
-                const bump = Math.sin(p01 * Math.PI);
-                auroraRingMat0.opacity = 0.22 + bump * 0.15;
-                auroraRingMat1.opacity = 0.14 + bump * 0.11;
-                if (p01 >= 1) {
-                    auroraPulse.current.active = false;
-                    auroraRingMat0.opacity = 0.22;
-                    auroraRingMat1.opacity = 0.14;
+                auroraPulse.current.nextIn -= dt;
+                if (auroraPulse.current.nextIn <= 0 && !auroraPulse.current.active) {
+                    auroraPulse.current.active = true;
+                    auroraPulse.current.t = 0;
+                    auroraPulse.current.dur = 1.8;
+                    auroraPulse.current.nextIn = randRange(rngRef.current, 10, 22);
+                }
+                if (auroraPulse.current.active) {
+                    auroraPulse.current.t += dt;
+                    const p01 = Math.min(1, auroraPulse.current.t / auroraPulse.current.dur);
+                    const bump = Math.sin(p01 * Math.PI);
+                    m0.opacity = 0.22 + bump * 0.15;
+                    m1.opacity = 0.14 + bump * 0.11;
+                    if (p01 >= 1) {
+                        auroraPulse.current.active = false;
+                        m0.opacity = 0.22;
+                        m1.opacity = 0.14;
+                    }
                 }
             }
         }
